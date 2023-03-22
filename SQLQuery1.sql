@@ -9,6 +9,14 @@ SELECT p.ProductName, COUNT(*) as Piece FROM Products as p inner join [Order Det
 on p.ProductID = od.ProductID
 group by p.ProductName
 order by Piece desc
+---------------------------------------------------------------------
+--information about how many units from which category have been sold
+
+SELECT c.CategoryName , count(*) as Piece2 FROM Products as p inner join Categories as c
+on p.CategoryID = c.CategoryID
+inner join [Order Details] as od
+on od.ProductID = p.ProductID
+group by CategoryName 
 
 
 
