@@ -18,6 +18,11 @@ inner join [Order Details] as od
 on od.ProductID = p.ProductID
 group by CategoryName 
 order by Piece2 desc
-
+----------------------------------------
+--information to who reports to whom --
+SELECT e2.FirstName + ' ' + e2.LastName as Staff,
+e1.FirstName + ' ' + e2.LastName as Superior 
+FROM Employees as e1 right join Employees e2
+on e1.EmployeeID = e2.ReportsTo
 
 
