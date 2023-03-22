@@ -17,6 +17,7 @@ on p.CategoryID = c.CategoryID
 inner join [Order Details] as od
 on od.ProductID = p.ProductID
 group by CategoryName 
+order by Piece2 desc
 
 
 
